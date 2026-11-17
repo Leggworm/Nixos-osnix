@@ -1,0 +1,15 @@
+/* 
+vim:syntax=css
+*/
+
+configuration {
+  /* Disable italic */
+  drun-display-format: "{name} [<span weight='light' size='small'>({generic})</span>]";
+  bw: 0;
+  case-sensitive: false;
+  matching: "fuzzy";
+  sort: true;
+  sorting-method: "fzf";
+}
+
+@theme "grey"

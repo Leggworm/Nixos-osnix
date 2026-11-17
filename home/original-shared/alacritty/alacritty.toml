@@ -1,0 +1,53 @@
+[colors]
+draw_bold_text_with_bright_colors = false
+
+[colors.cursor]
+cursor = "#ffce50"
+text = "#44475a"
+
+[colors.normal]
+black = "#1b161f"
+red = "#ff5555"
+green = "#54c6b5"
+yellow = "#d5aa2a"
+blue = "#bd93f9"
+magenta = "#ff79c6"
+cyan = "#8be9fd"
+white = "#f8f8f2"
+
+[colors.bright]
+black = "#44475a"
+red = "#ff6e67"
+green = "#5af78e"
+yellow = "#ffce50"
+blue = "#caa9fa"
+magenta = "#ff92d0"
+cyan = "#9aedfe"
+white = "#e6e6e6"
+
+[colors.primary]
+background = "#1b161f"
+foreground = "#f8f8f2"
+
+[cursor]
+style = "Underline"
+
+[font]
+size = 15.0
+
+[font.bold]
+style = "Bold"
+
+[font.bold_italic]
+style = "Bold"
+
+[font.italic]
+style = "Regular"
+
+[font.normal]
+family = "CaskaydiaMono Nerd Font"
+style = "Regular"
+
+[window]
+dynamic_title = true
+opacity = 0.94

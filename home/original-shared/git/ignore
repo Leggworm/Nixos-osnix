@@ -1,0 +1,11 @@
+# Emacs
+\#*\#
+.\#*
+
+# Vim
+*.swp
+*~
+*.back
+
+# Os X
+.DS_Store

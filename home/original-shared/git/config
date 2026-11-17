@@ -1,0 +1,39 @@
+[include]
+  path = ~/.config/git/user
+
+[core]
+  excludesfile = ~/.config/git/ignore
+  filemode = false
+  pager = delta
+  autocrlf = input
+
+[init]
+  defaultBranch = main
+
+[branch "main"]
+  remote = origin
+
+[alias]
+  lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(magenta)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+  recent-branches = "branch --sort=-committerdate"
+
+[interactive]
+  diffFilter = delta --color-only
+
+[push]
+  default = "current"
+
+[rerere]
+  enabled = 1
+
+[delta]
+  navigate = true  # use n and N to move between diff sections
+  plus-style = syntax "#16271C"
+  minus-style = normal "#331F21"
+  syntax-theme = ansi
+
+[merge]
+  conflictstyle = diff3
+
+[diff]
+  colorMoved = default

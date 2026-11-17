@@ -1,0 +1,65 @@
+/* 
+https://github.com/davatorium/rofi/blob/next/doc/rofi-theme.5.markdown#layout
+vim:syntax=css
+*/
+
+* {
+  highlight: bold;
+  background-color: transparent;
+  light-grey: #c3beba;
+  dark-grey: #404049;
+  dark-transparent: rgba(40, 40, 49, 0.9);
+  spacing: 0;
+}
+
+element-text {
+  text-color: inherit;
+  background-color: transparent;
+}
+
+listview {
+  background-color: transparent;
+  cycle: false;
+  lines: 7;
+}
+
+window {
+  width: 64ch;
+  font: "CaskaydiaMono Nerd Font 15";
+  border-radius: 4px;
+}
+
+inputbar {
+  children: [entry];
+}
+
+message {
+  background-color: @light-grey;
+}
+
+textbox {
+  padding: 8px;
+  text-color: @dark-grey;
+  background-color: transparent;
+}
+
+entry {
+  background-color: @dark-transparent;
+  text-color: @light-grey;
+  padding: 8px;
+}
+
+textbox {
+  padding: 8px;
+}
+
+element {
+  background-color: @dark-transparent;
+  text-color: @light-grey;
+  padding: 8px;
+}
+
+element selected {
+  background-color: @light-grey;
+  text-color: @dark-grey;
+}

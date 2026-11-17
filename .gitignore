@@ -1,0 +1,16 @@
+# Nix build outputs
+result
+result-*
+.direnv/
+
+# Local/editor files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Machine-local configuration and secrets
+hardware-configuration.local.nix
+secrets/
+*.age
+.env

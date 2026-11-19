@@ -1,22 +1,22 @@
-# leggrowm-mini NixOS configuration
+# leggrowm-mini: подготовка установочной флешки
 
-This repository defines one NixOS host, `leggrowm-mini`, for a Lenovo IdeaPad
-3 (81W4) with an AMD Ryzen 3 4300U, integrated AMD graphics, Qualcomm Wi-Fi,
-and one NVMe drive.
+Образ предназначен для Lenovo IdeaPad 3 (81W4) с NVMe `SKHynix_HFM512GDHTNI-87A0B` на 512110190592 байта. Для владельца ноутбука: [установка с готовой флешки](INSTALL.ru.md).
 
-## Included
+## Сборка
 
-- one normal user: `leggrowm`;
-- Hyprland desktop, Fish, Neovim and development tools;
-- Throne GUI client, with no system-wide proxy configured;
-- PostgreSQL, OpenSSH and Avahi;
-- AMD graphics, Bluetooth, touchpad, PipeWire and power-management settings.
+На x86_64 Linux с Nix и включёнными `nix-command flakes` выполните из корня репозитория:
 
-Throne subscription URLs, profiles, and credentials are deliberately not stored
-in this repository. Configure them in the Throne GUI after installation.
+```sh
+nix build --no-update-lock-file .#installer-iso --out-link result-installer
+ls -lh result-installer/iso/leggrowm-mini-installer.iso
+sha256sum result-installer/iso/leggrowm-mini-installer.iso
+```
 
-## Installation
+Используйте `flake.lock` из той же ревизии. Сеть нужна машине сборки для получения зависимостей, но не ноутбуку. Образ содержит готовую систему, локальный сценарий Disko и копию конфигурации. Сохраните контрольную сумму для проверки перед записью.
 
-Follow the beginner-friendly Russian guide in
-[`INSTALL.ru.md`](./INSTALL.ru.md). It includes backup, USB creation, BIOS,
-disk verification, installation, first login, and Throne setup.
+## Запись
+
+1. Возьмите пустую USB-флешку большей ёмкости, чем ISO (рекомендуется 32 ГБ). Запись сотрёт её содержимое.
+2. Если переносили ISO на другой компьютер, сравните SHA-256 копии с результатом сборки. В Windows используйте `Get-FileHash .\leggrowm-mini-installer.iso -Algorithm SHA256`.
+3. В balenaEtcher выберите ISO через `Flash from file`, затем флешку через `Select target`. Проверьте её размер и имя, нажмите `Flash` и дождитесь проверки записи. Не копируйте ISO на флешку как обычный файл.
+4. Извлеките флешку безопасно. Если Windows предложит её отформатировать, откажитесь. Передайте флешку и `INSTALL.ru.md` владельцу.

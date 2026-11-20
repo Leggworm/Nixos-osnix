@@ -1,6 +1,7 @@
 # Nix build outputs
 result
 result-*
+*.iso
 .direnv/
 
 # Local/editor files

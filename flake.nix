@@ -45,6 +45,17 @@
   in {
     formatter.${system} = pkgs.alejandra;
 
+    packages.${system}.installer-iso = (nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = {
+        installedSystem = inputs.self.nixosConfigurations.leggrowm-mini.config.system.build.toplevel;
+        configurationSource = inputs.self.outPath;
+        diskLayout = import ./disko.nix;
+        diskTools = import disko { inherit (nixpkgs) lib; };
+      };
+      modules = [./installer/image.nix];
+    }).config.system.build.isoImage;
+
     devShells.${system}.default = pkgs.mkShell {
       packages = [
         (pkgs.writeShellApplication {

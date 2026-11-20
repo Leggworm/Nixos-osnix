@@ -49,7 +49,7 @@
     file.".config/mpv/scripts/delete_file.lua".source = ./original-shared/mpv/scripts/delete_file.lua;
 
     file.".npmrc".source = ./original-shared/.npmrc;
-    file.".config/swayimg/init.lua".source = ./original-shared/nvim/init.lua;
+    file.".config/swayimg/init.lua".source = ./original-shared/swayimg.lua;
     file.".iex.exs".source = ./original-shared/.iex.exs;
 
     file.".local/share/nemo/actions/aunpack.nemo_action".text = ''
